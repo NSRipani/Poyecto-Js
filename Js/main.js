@@ -64,7 +64,6 @@ function cargarMercaderia(mensaje){
 }
 
 function id_indice(){
-    //alert("-> ¿Qué producto desea cargar mercadería?\n");
     let op_prod = Number(prompt("-> ¿Qué producto desea cargar mercadería?\nIngrese el ID del producto o 'Salir': "));
     while (Number.isNaN(op_prod) || op_prod < 0 || op_prod > 3) {
         op_prod = Number(prompt("\n-------------------------------------------------------------\n" +
@@ -87,7 +86,7 @@ while (opcionMenu !== 0) {
                     stock[i] += CargarStock(`Cargue stock para ${productos[i]}: `);
                 }
                 dia_anterior_cargado = true;
-                alert("Stock disponible: " + stock.join("  |  "));//alert(stock.toString())
+                alert("Stock disponible: " + stock.join("  |  "));
 
             }
             else alert("- El stock del dia anterior ya ha sido cargada");
@@ -95,16 +94,14 @@ while (opcionMenu !== 0) {
         case '2':
             let salir = false
             while (salir === false){
-                //alert("-----------------   CARGAR MERCADERIA     ------------------\n");
+                
                 let mensajeMercaderia = "-----------------   CARGAR MERCADERIA     ------------------\n";
                 // Visualizar lista de producto para la eleccion del producto 
                 for (i=0;i<productos.length;i++){
-                    //alert(`${i} - ${productos[i]}`);
                     mensajeMercaderia += `${i} - ${productos[i]}\n`;
                 }
                 mensajeMercaderia += `${productos.length}`+" - Salir";
-                alert(mensajeMercaderia)
-                //alert(`${productos.length}`+" - Salir")        
+                alert(mensajeMercaderia)      
             
                 op_prod = id_indice();
                 // Condicional para cargar mercaderia por producto
@@ -119,19 +116,15 @@ while (opcionMenu !== 0) {
         case '3':
             let salirVenta = false
             while (salirVenta === false){
-                //alert("|-----------------   CARGAR VENTAS     ------------------|\n");
                 let mesajeVenta = "-----------------   CARGAR VENTAS     ------------------\n";
                 
                 // Visualizar lista de producto para la eleccion del producto 
                 for (i=0;i<productos.length;i++){
-                    //alert(`${i} - ${productos[i]}`);
                     mesajeVenta += `${i} - ${productos[i]}\n`;
-                    
                 }
                 mesajeVenta += `${productos.length}`+" - Salir\n\n";
                 mesajeVenta += "Ingrese el número del producto deseado:";
-                //alert(mesajeVenta)
-               // alert(`${productos.length}`+" - Salir") 
+
                 let op_prod = Number(prompt(mesajeVenta));
         
                 if (op_prod !== productos.length) {
@@ -176,9 +169,6 @@ while (opcionMenu !== 0) {
             productos.forEach((producto, id) => {
                 mesajeStock += `${id} - ${producto}\n`;
             });
-            //alert(mesajeStock)
-            // Se usa esta funcion para valirar entrada de indices
-            //prod = consultaDisponiblidad()
             mesajeStock += "-> ¿Qué producto desea consultar?\nIngrese el ID del producto o 3 - 'Salir': ";
             let prod = Number(prompt(mesajeStock));
 
@@ -188,7 +178,6 @@ while (opcionMenu !== 0) {
                 "---------------------------------------------------------------\n"+
                 "Ingrese el ID del producto o 3 - 'Salir': "));
             }
-            //return pro
             if(prod < 3){
                 alert("|------------------------------------------------------------|\n"+
                 "|-----------------     STOCK Y SU PRECIO    ---------------|\n"+
