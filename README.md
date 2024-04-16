@@ -1,0 +1,1 @@
+En el primer entregable, lo que se intento realizar, con un ciclo While y dentro de él un switch, es una interacion de carga de mercadería, relizar alguna venta mostrar la venta y en un ultima caso del switch mostrar los sctock de la mercaderia.
